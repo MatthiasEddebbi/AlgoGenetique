@@ -11,6 +11,8 @@ public class Main {
 
 	public static void main(String[] args) {
 		
+		double mutationRate = 5;
+		
 		List<Individual> firstGeneration = new ArrayList<Individual>();
 		
 		for(int i = 0; i < 15; i++)
@@ -23,7 +25,7 @@ public class Main {
 		SelectionRandom selection = new SelectionRandom();
 		manager.getInstance().setSelection(selection);
 		
-		GenerationChild generation = new GenerationChild();
+		GenerationChild generation = new GenerationChild(mutationRate);
 		manager.getInstance().setGeneration(generation);
 		
 		ReplaceBest replace = new ReplaceBest();

@@ -18,7 +18,7 @@ public abstract class Individual {
 	/**
 	 * Function to mutate the individual
 	 */
-	public abstract  void Mute();
+	public abstract  void Mutate();
 	
 	/**
 	 * Function to create a new individual from two individuals
