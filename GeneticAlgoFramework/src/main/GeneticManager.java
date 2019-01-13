@@ -32,16 +32,18 @@ public class GeneticManager {
 		
 		do {
 			
-		List<Individual> parents = this.selection.Selection(currentGeneration,30);
+		List<Individual> parents = this.selection.Selection(currentGeneration,10);
 		
 		List<Individual> children = this.generation.GenerateChildList(parents);
 		
 		this.oldGeneration = parents;
 		
-		//currentGeneration = this.replace.Replace();
+		currentGeneration = this.replace.Replace(currentGeneration, children);
+		
+		index +=1;
 		
 		}
-		while(index < 3);
+		while(index < 100);
 		
 		return currentGeneration;
 	}

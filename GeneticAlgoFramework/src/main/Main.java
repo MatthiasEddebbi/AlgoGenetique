@@ -25,7 +25,7 @@ public class Main {
 		SelectionRandom selection = new SelectionRandom();
 		manager.getInstance().setSelection(selection);
 		
-		GenerationChild generation = new GenerationChild(mutationRate,30);
+		GenerationChild generation = new GenerationChild(mutationRate,10);
 		manager.getInstance().setGeneration(generation);
 		
 		ReplaceBest replace = new ReplaceBest();
@@ -39,5 +39,7 @@ public class Main {
 		{
 			System.out.println(((IndividualTest)ind).toString());
 		}
+		
+		System.out.println("Taille de la liste :" + results.size());
 	}
 }

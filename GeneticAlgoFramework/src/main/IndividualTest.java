@@ -17,7 +17,8 @@ public class IndividualTest extends Individual {
 	@Override
 	public double Evaluate() {
 		
-		return (param*100 / 31);
+		score = ((double)param*(double)100) / (double)31;
+		return score;
 		
 	}
 
@@ -34,7 +35,7 @@ public class IndividualTest extends Individual {
 		int parent2_value =  ((IndividualTest)ind).GetParam();
 		
 		
-		int result = param|parent2_value;
+		int result = param&parent2_value;
 		
 		return new IndividualTest(result);
 	}
@@ -43,10 +44,13 @@ public class IndividualTest extends Individual {
 	{
 		String str ="";
 		
-		str += "La veleur en byte est " + param + "\n";
+		str += "La veleur en decimal est " + param + "\n";
 		
-		str += "La valeur en byte est " + Integer.toString(param,2);
+		str += "La valeur en byte est " + Integer.toString(param,2) + "\n";
 		
+		str += "L'evaluation est de : " + score + "\n";
+		
+		str += "*************************\n";
 		return str;
 	}
 
