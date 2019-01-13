@@ -18,6 +18,10 @@ public class SelectionRandom extends SelectionStrategy {
 	@Override
 	public List<Individual> Selection(List<Individual> listInd, int desiredNumber) {
 
+		for(Individual ind:listInd) {
+			ind.Evaluate();
+			}
+		
 		//listInd must be given
 		if (listInd == null) {
 			System.out.print("No Individuals defined in Selection step");
