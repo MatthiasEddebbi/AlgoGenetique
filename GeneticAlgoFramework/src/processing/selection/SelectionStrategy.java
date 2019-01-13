@@ -9,38 +9,15 @@ import main.Individual;
  *
  */
 public abstract class SelectionStrategy {
-	
-	protected List<Individual> individual;
-	protected int desiredNumberOfChildren;
-	
+		
 	/**
 	 * Abstract constructor for Selection step
 	 * @param List<Individual> ind 
 	 */
-	public SelectionStrategy(List<Individual> ind) {
-		this.individual = ind;
-		desiredNumberOfChildren = 0;
-	}
-
-	public List<Individual> getIndividuals() {
-		return individual;
-	}
-
-	public void setIndividuals(List<Individual> ind) {
-		this.individual = ind;
-	}
-
-	public int getDesiredNumberOfChildren() {
-		return desiredNumberOfChildren;
-	}
-
-	public void setDesiredNumberOfChildren(int desiredNumberOfChildren) {
-		this.desiredNumberOfChildren = desiredNumberOfChildren;
+	public SelectionStrategy() {
 	}
 	
-	
-	
-	public abstract List<Individual> Selection();
+	public abstract List<Individual> Selection(List<Individual> listInd);
 		
 
 }

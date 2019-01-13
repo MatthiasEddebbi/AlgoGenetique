@@ -7,29 +7,23 @@ import main.Individual;
 
 public class SelectionRandom extends SelectionStrategy {
 
-	
-	public SelectionRandom(List<Individual> ind) {
-		super(ind);
-	}
-
 	@Override
-	public List<Individual> Selection() {
+	public List<Individual> Selection(List<Individual> listInd) {
 
-		if (this.getIndividuals() == null) {
+		if (listInd == null) {
 			System.out.print("No Individuals defined in Selection step");
 		} else {
 			
 			List<Individual> newIndividuals = new ArrayList();
-			List<Individual> bufIndividuals = getIndividuals();
+			List<Individual> bufIndividuals = listInd;
 			
 			int index = 0;
-			for(int i = 0; i < this.desiredNumberOfChildren - 1; i++) {
+			for(int i = 0; i < listInd.size() - 1; i++) {
 				index = (int)Math.random() * bufIndividuals.size();
 				newIndividuals.add(bufIndividuals.get(index));
 				bufIndividuals.remove(index);
 			}
-			this.setIndividuals(newIndividuals);
-			return this.individual;
+			
 		}
 		return null;
 	}
