@@ -9,34 +9,20 @@ import main.Individual;
 public class ReplaceBest extends ReplaceStrategy{
 
 	public List<Individual> Replace(List<Individual> parentList, List<Individual> childList){
-		List<Individual> newList = new ArrayList<Individual>();
-		int i;
 		
-		for (i=0; i<parentList.size(); i++)
+		parentList.sort(Comparator.comparingDouble(Individual::getScore).reversed());
+		
+		for (Individual child : childList) 
 		{
-			newList.add(parentList.get(i));
+			child.Evaluate();
+			Individual worseParent = parentList.get(parentList.size()-1);
+			
+			if(worseParent.getScore() < child.getScore())
+			{
+				parentList.set(parentList.size()-1, child);
+				parentList.sort(Comparator.comparingDouble(Individual::getScore).reversed());
+			}
 		}
-		
-		for (i=0; i<childList.size(); i++)
-		{
-			newList.add(childList.get(i));
-		}
-		for (i=0; i<newList.size(); i++)
-		{
-			newList.get(i).Evaluate();
-		}
-		
-		newList.sort(Comparator.comparingDouble(Individual::getScore).reversed());
-		
-		for (i=0; i<parentList.size(); i++) 
-		{
-			parentList.add(i, newList.get(i));
-		}
-		
-		newList.subList(0, parentList.size());
-		
-		return newList;
+		return parentList;
 	}
-	
-	
 }

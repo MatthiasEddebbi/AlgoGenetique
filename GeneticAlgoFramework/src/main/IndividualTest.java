@@ -17,9 +17,9 @@ public class IndividualTest extends Individual {
 	@Override
 	public double Evaluate() {
 		
-		score = ((double)param*(double)100) / (double)31;
+		score = Math.abs((double)((31 - param))) / (double)31;
+		score = score * 100;
 		return score;
-		
 	}
 
 	@Override
@@ -33,7 +33,6 @@ public class IndividualTest extends Individual {
 	public Individual Crossing(Individual ind) {
 		
 		int parent2_value =  ((IndividualTest)ind).GetParam();
-		
 		
 		int result = param&parent2_value;
 		
