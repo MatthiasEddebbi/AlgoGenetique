@@ -28,18 +28,20 @@ public class GeneticManager {
 	
 	public List<Individual> Processing()
 	{
-		/*
+		int index = 0;
+		
+		do {
+			
 		List<Individual> parents = this.selection.Selection();
 		
-		List<Individual> childs = this.generation.Generate();
+		List<Individual> childs = this.generation.GenerateChildList(parents);
 		
 		this.oldGeneration = parents;
 		
-		currentGeneration = this.replace.Replace();
+		//currentGeneration = this.replace.Replace();
 		
-		
-		
-		*/
+		}
+		while(index < 3);
 		
 		return currentGeneration;
 	}

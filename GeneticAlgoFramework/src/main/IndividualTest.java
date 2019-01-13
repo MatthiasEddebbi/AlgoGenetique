@@ -22,7 +22,7 @@ public class IndividualTest extends Individual {
 	}
 
 	@Override
-	public void Mute() {
+	public void Mutate() {
 		
 		param = param << 1 ;
 		
