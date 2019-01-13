@@ -10,7 +10,7 @@ public class GeneticManager {
 	
 	private ReplaceStrategy replace;
 	
-	private selectionStrategy selection;
+	private SelectionStrategy selection;
 	
 	private List<Individual> oldGeneration;
 	
@@ -50,7 +50,7 @@ public class GeneticManager {
 		this.replace = replace;
 	}
 
-	public void setSelection(selectionStrategy selection) {
+	public void setSelection(SelectionStrategy selection) {
 		this.selection = selection;
 	}
 }
