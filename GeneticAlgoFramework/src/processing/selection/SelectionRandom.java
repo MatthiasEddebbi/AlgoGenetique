@@ -5,11 +5,20 @@ import java.util.List;
 
 import main.Individual;
 
+/**
+ * Concrete Selection strategy, selectionning Random children for a new mutation / crossing generation
+ * 
+ */
 public class SelectionRandom extends SelectionStrategy {
 
+	/**
+	 * @param List<Individual> listIng, current generation individual list
+	 * @return List<Individual> newIndividual
+	 */
 	@Override
 	public List<Individual> Selection(List<Individual> listInd) {
 
+		//listInd must be given
 		if (listInd == null) {
 			System.out.print("No Individuals defined in Selection step");
 		} else {
@@ -21,8 +30,9 @@ public class SelectionRandom extends SelectionStrategy {
 			for(int i = 0; i < listInd.size() - 1; i++) {
 				index = (int)Math.random() * bufIndividuals.size();
 				newIndividuals.add(bufIndividuals.get(index));
-				bufIndividuals.remove(index);
+				bufIndividuals.remove(index);  //remove this item to avoid having doubled item in newIndividual
 			}
+			return newIndividuals;
 			
 		}
 		return null;

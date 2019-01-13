@@ -17,6 +17,11 @@ public abstract class SelectionStrategy {
 	public SelectionStrategy() {
 	}
 	
+	/**
+	 * Selection Method to implements in concrete strategy
+	 * @param listInd, list of current generation individuals
+	 * @return List<Individual> new list of individuals
+	 */
 	public abstract List<Individual> Selection(List<Individual> listInd);
 		
 
