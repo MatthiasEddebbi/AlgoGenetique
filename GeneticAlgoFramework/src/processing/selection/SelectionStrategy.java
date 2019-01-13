@@ -10,8 +10,8 @@ import main.Individual;
  */
 public abstract class SelectionStrategy {
 	
-	private List<Individual> individual;
-	private int desiredNumberOfChildren;
+	protected List<Individual> individual;
+	protected int desiredNumberOfChildren;
 	
 	/**
 	 * Abstract constructor for Selection step
