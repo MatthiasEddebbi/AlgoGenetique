@@ -33,7 +33,9 @@ public class ReplaceBest extends ReplaceStrategy{
 			parentList.add(i, newList.get(i));
 		}
 		
-		return parentList;
+		newList.subList(0, parentList.size());
+		
+		return newList;
 	}
 	
 	
