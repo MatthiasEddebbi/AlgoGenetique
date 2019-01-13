@@ -28,7 +28,7 @@ public class SelectionRandom extends SelectionStrategy {
 			
 			int index = 0;
 			for(int i = 0; i < desiredNumber + 1; i++) {
-				index = (int)Math.random() * bufIndividuals.size();
+				index = (int)(Math.random() * bufIndividuals.size());
 				newIndividuals.add(bufIndividuals.get(index));
 				bufIndividuals.remove(index);  //remove this item to avoid having doubled item in newIndividual
 			}
