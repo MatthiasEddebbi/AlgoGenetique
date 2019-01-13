@@ -25,7 +25,7 @@ public class Main {
 		SelectionRandom selection = new SelectionRandom();
 		manager.getInstance().setSelection(selection);
 		
-		GenerationChild generation = new GenerationChild(mutationRate);
+		GenerationChild generation = new GenerationChild(mutationRate,30);
 		manager.getInstance().setGeneration(generation);
 		
 		ReplaceBest replace = new ReplaceBest();
@@ -34,5 +34,10 @@ public class Main {
 		manager.setCurrentGeneration(firstGeneration);
 		
 		List<Individual> results = manager.getInstance().Processing();
+		
+		for (Individual ind : results)
+		{
+			System.out.println(((IndividualTest)ind).toString());
+		}
 	}
 }

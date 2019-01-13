@@ -32,9 +32,9 @@ public class GeneticManager {
 		
 		do {
 			
-		List<Individual> parents = this.selection.Selection();
+		List<Individual> parents = this.selection.Selection(currentGeneration,30);
 		
-		List<Individual> childs = this.generation.GenerateChildList(parents);
+		List<Individual> children = this.generation.GenerateChildList(parents);
 		
 		this.oldGeneration = parents;
 		
