@@ -2,6 +2,8 @@ package main;
 
 public abstract class Individual {
 
+	protected double score;
+	
 	/**
 	 * Empty constructor for initialization
 	 */
@@ -24,4 +26,12 @@ public abstract class Individual {
 	 * @return New individual obtain from two parents
 	 */
 	public abstract Individual Crossing(Individual ind);
+
+	public double getScore() {
+		return score;
+	}
+
+	public void setScore(double score) {
+		this.score = score;
+	}
 }
