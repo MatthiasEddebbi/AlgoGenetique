@@ -1,5 +1,5 @@
 package processing.selection;
 
-public class selectionRandom {
+public class SelectionRandom {
 
 }
