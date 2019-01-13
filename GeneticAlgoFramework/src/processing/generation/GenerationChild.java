@@ -6,22 +6,20 @@ import main.Individual;
 
 public class GenerationChild {
 	
-	private List<Individual> individualList;
 	protected double mutationRate;
 
-	public GenerationChild(List<Individual> _individualList, double _mutationRate) {
+	public GenerationChild(double _mutationRate) {
 
-		individualList = _individualList;
 		mutationRate = _mutationRate;
 	}
 	
-	public List<Individual> GenerateChildList(){
+	public List<Individual> GenerateChildList(List<Individual> individualList){
 		double threshold;
 		int i;
 		List<Individual> childList = null;
-		for (i=0; i<this.individualList.size()-1; i++)
+		for (i=0; i<individualList.size()-1; i++)
 		{
-			threshold = (double)(Math.random() * (this.individualList.size() + 1));
+			threshold = (double)(Math.random() * (individualList.size() + 1));
 			if (threshold <= this.mutationRate) {
 				//TODO
 			}
