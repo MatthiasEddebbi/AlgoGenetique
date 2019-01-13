@@ -5,6 +5,7 @@ import java.util.List;
 
 import processing.replace.*;
 import processing.selection.*;
+import processing.generation.*;
 
 public class Main {
 
@@ -17,21 +18,19 @@ public class Main {
 			firstGeneration.add(new IndividualTest(i));
 		}
 		
-		
-		selectionBestIndividuals selection = new selectionBestIndividuals();
-		
-		ReplaceBest replace = new ReplaceBest();
-		
 		GeneticManager manager = GeneticManager.getInstance();
 		
-		manager.getInstance().setReplace(replace);
-		
+		SelectionRandom selection = new SelectionRandom();
 		manager.getInstance().setSelection(selection);
 		
+		GenerationChild generation = new GenerationChild();
+		manager.getInstance().setGeneration(generation);
+		
+		ReplaceBest replace = new ReplaceBest();
+		manager.getInstance().setReplace(replace);
 		
 		manager.setCurrentGeneration(firstGeneration);
 		
-		
-		
+		List<Individual> results = manager.getInstance().Processing();
 	}
 }

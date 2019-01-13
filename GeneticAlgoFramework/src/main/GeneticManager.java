@@ -14,6 +14,8 @@ public class GeneticManager {
 	
 	private List<Individual> oldGeneration;
 	
+	private GenerationChild generation;
+	
 	private List<Individual> currentGeneration;
 	
 	private double mutationRate;
@@ -22,6 +24,24 @@ public class GeneticManager {
 	
 	private GeneticManager() {
 		
+	}
+	
+	public List<Individual> Processing()
+	{
+		/*
+		List<Individual> parents = this.selection.Selection();
+		
+		List<Individual> childs = this.generation.Generate();
+		
+		this.oldGeneration = parents;
+		
+		currentGeneration = this.replace.Replace();
+		
+		
+		
+		*/
+		
+		return currentGeneration;
 	}
 	
 	// getters and setters
@@ -53,4 +73,9 @@ public class GeneticManager {
 	public void setSelection(SelectionStrategy selection) {
 		this.selection = selection;
 	}
+
+	public void setGeneration(GenerationChild generation) {
+		this.generation = generation;
+	}
+	
 }
