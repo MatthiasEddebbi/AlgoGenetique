@@ -1,5 +1,5 @@
 package processing.replace;
 
-public class ReplaceRandom {
+public class ReplaceRandom extends ReplaceStrategy{
 
 }

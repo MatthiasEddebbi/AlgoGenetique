@@ -1,5 +1,5 @@
 package processing.replace;
 
-public class ReplaceBest {
+public class ReplaceBest extends ReplaceStrategy{
 
 }
