@@ -16,7 +16,7 @@ public class SelectionRandom extends SelectionStrategy {
 	 * @return List<Individual> newIndividual
 	 */
 	@Override
-	public List<Individual> Selection(List<Individual> listInd) {
+	public List<Individual> Selection(List<Individual> listInd, int desiredNumber) {
 
 		//listInd must be given
 		if (listInd == null) {
@@ -27,7 +27,7 @@ public class SelectionRandom extends SelectionStrategy {
 			List<Individual> bufIndividuals = listInd;
 			
 			int index = 0;
-			for(int i = 0; i < listInd.size() - 1; i++) {
+			for(int i = 0; i < desiredNumber; i++) {
 				index = (int)Math.random() * bufIndividuals.size();
 				newIndividuals.add(bufIndividuals.get(index));
 				bufIndividuals.remove(index);  //remove this item to avoid having doubled item in newIndividual

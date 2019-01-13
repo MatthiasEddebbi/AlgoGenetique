@@ -17,7 +17,7 @@ public class SelectionBestIndividuals extends SelectionStrategy {
 	 * @return List<Individual> newIndividual
 	 */
 	@Override
-	public List<Individual> Selection(List<Individual> listInd) {
+	public List<Individual> Selection(List<Individual> listInd, int desiredNumber) {
 
 		if (listInd == null) {
 			System.out.print("No Individuals defined in Selection step");
@@ -26,7 +26,7 @@ public class SelectionBestIndividuals extends SelectionStrategy {
 			List<Individual> newIndividuals = new ArrayList();
 			
 			listInd.sort(Comparator.comparingDouble(Individual::getScore));
-			newIndividuals = listInd.subList(0, listInd.size() - 1); // Copy best individual from current generation minus one parent
+			newIndividuals = listInd.subList(0, desiredNumber); // Copy best individual from current generation minus one parent
 			return newIndividuals;
 		}
 		return null;
