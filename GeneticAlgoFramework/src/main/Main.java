@@ -1,23 +1,31 @@
 package main;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import processing.replace.*;
+import processing.selection.*;
+
 public class Main {
 
 	public static void main(String[] args) {
 		
-		IndividualTest parent1 = new IndividualTest(12);
-		System.out.println(parent1.toString());
-		System.out.println("Le score d'evaluation est : " + parent1.Evaluate() + "\n");
+		List<Individual> firstGeneration = new ArrayList<Individual>();
 		
-		IndividualTest parent2 = new IndividualTest(10);
-		System.out.println(parent2.toString());
-		System.out.println("Le score d'evaluation est : " + parent2.Evaluate() + "\n");
+		for(int i = 0; i < 15; i++)
+		{
+			firstGeneration.add(new IndividualTest(i));
+		}
 		
-		IndividualTest child = (IndividualTest)parent1.Crossing(parent2);
-		System.out.println(child.toString());
-		System.out.println("Le score d'evaluation est : " + child.Evaluate() + "\n");
+		GeneticManager manager = GeneticManager.getInstance();
 		
-		child.Mute();
-		System.out.println(child.toString());
-		System.out.println("Le score d'evaluation est : " + child.Evaluate() + "\n");
+		SelectionBestIndividuals selection = new SelectionBestIndividuals();
+		
+		ReplaceBest replace = new ReplaceBest();
+		
+		manager.setCurrentGeneration(firstGeneration);
+		
+		
+		
 	}
 }
