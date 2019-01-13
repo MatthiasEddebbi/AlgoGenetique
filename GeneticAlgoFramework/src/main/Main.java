@@ -4,10 +4,20 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		individuTest test = new individuTest(21);
+		IndividualTest parent1 = new IndividualTest(12);
+		System.out.println(parent1.toString());
+		System.out.println("Le score d'evaluation est : " + parent1.Evaluate() + "\n");
 		
-		System.out.println(test.toString());
-
+		IndividualTest parent2 = new IndividualTest(10);
+		System.out.println(parent2.toString());
+		System.out.println("Le score d'evaluation est : " + parent2.Evaluate() + "\n");
+		
+		IndividualTest child = (IndividualTest)parent1.Crossing(parent2);
+		System.out.println(child.toString());
+		System.out.println("Le score d'evaluation est : " + child.Evaluate() + "\n");
+		
+		child.Mute();
+		System.out.println(child.toString());
+		System.out.println("Le score d'evaluation est : " + child.Evaluate() + "\n");
 	}
-
 }
