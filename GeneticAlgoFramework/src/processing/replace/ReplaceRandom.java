@@ -13,7 +13,7 @@ public class ReplaceRandom extends ReplaceStrategy{
 
 		for (i=0; i<childList.size(); i++) {
 			
-			rand = 1 + (int)(Math.random() * (parentList.size() + 1));
+			rand = 1 + (int)(Math.random() * (parentList.size()));
 			parentList.add(rand, childList.get(i));
 		}
 		
