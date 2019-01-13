@@ -1,5 +1,5 @@
 package processing.remplace;
 
-public class remplaceBest {
+public class RemplaceBest {
 
 }

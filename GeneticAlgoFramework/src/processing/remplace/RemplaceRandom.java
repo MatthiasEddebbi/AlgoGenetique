@@ -1,5 +1,5 @@
 package processing.remplace;
 
-public class remplaceRandom {
+public class RemplaceRandom {
 
 }
