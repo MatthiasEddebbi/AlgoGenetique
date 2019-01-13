@@ -17,11 +17,17 @@ public class Main {
 			firstGeneration.add(new IndividualTest(i));
 		}
 		
-		GeneticManager manager = GeneticManager.getInstance();
 		
-		SelectionBestIndividuals selection = new SelectionBestIndividuals();
+		selectionBestIndividuals selection = new selectionBestIndividuals();
 		
 		ReplaceBest replace = new ReplaceBest();
+		
+		GeneticManager manager = GeneticManager.getInstance();
+		
+		manager.getInstance().setReplace(replace);
+		
+		manager.getInstance().setSelection(selection);
+		
 		
 		manager.setCurrentGeneration(firstGeneration);
 		
