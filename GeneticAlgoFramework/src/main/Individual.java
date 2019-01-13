@@ -2,11 +2,26 @@ package main;
 
 public abstract class Individual {
 
+	/**
+	 * Empty constructor for initialization
+	 */
 	public Individual() {}
 	
+	/**
+	 * Function to evaluate the individual and obtain a score
+	 * @return Double to represent the "score" of the individual
+	 */
 	public abstract double Evaluate();
 	
+	/**
+	 * Function to mutate the individual
+	 */
 	public abstract  void Mute();
 	
+	/**
+	 * Function to create a new individual from two individuals
+	 * @param ind Second individual for the merging
+	 * @return New individual obtain from two parents
+	 */
 	public abstract Individual Crossing(Individual ind);
 }

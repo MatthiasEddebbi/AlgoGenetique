@@ -18,16 +18,39 @@ public class GeneticManager {
 	
 	private double mutationRate;
 	
-	
-	
 	private static GeneticManager instance = new GeneticManager();
 	
 	private GeneticManager() {
 		
 	}
 	
+	// getters and setters
+	
 	public static GeneticManager getInstance() {
 		return instance;
 	}
-	
+
+	public List<Individual> getCurrentGeneration() {
+		return currentGeneration;
+	}
+
+	public void setCurrentGeneration(List<Individual> currentGeneration) {
+		this.currentGeneration = currentGeneration;
+	}
+
+	public double getMutationRate() {
+		return mutationRate;
+	}
+
+	public void setMutationRate(double mutationRate) {
+		this.mutationRate = mutationRate;
+	}
+
+	public void setReplace(ReplaceStrategy replace) {
+		this.replace = replace;
+	}
+
+	public void setSelection(selectionStrategy selection) {
+		this.selection = selection;
+	}
 }
