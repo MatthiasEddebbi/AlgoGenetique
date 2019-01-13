@@ -1,12 +1,14 @@
 package processing.selection;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import main.Individual;
 
 /**
- * Concrete Selection strategy, selectionning Random children for a new mutation / crossing generation
+ * Concrete Selection strategy, selectionning Random children for a new mutation
+ * / crossing generation
  * 
  */
 public class SelectionRandom extends SelectionStrategy {
@@ -18,26 +20,28 @@ public class SelectionRandom extends SelectionStrategy {
 	@Override
 	public List<Individual> Selection(List<Individual> listInd, int desiredNumber) {
 
-		for(Individual ind:listInd) {
+		// Evaluate fonction of each individuals before selection
+		for (Individual ind : listInd) {
 			ind.Evaluate();
-			}
-		
-		//listInd must be given
+		}
+
+		// listInd must be given
 		if (listInd == null) {
 			System.out.print("No Individuals defined in Selection step");
 		} else {
-			
+
 			List<Individual> newIndividuals = new ArrayList();
-			List<Individual> bufIndividuals = listInd;
+			List<Individual> bufIndividuals = new ArrayList(listInd);
 			
+
 			int index = 0;
-			for(int i = 0; i < desiredNumber; i++) {
-				index = (int)(Math.random() * bufIndividuals.size());
+			for (int i = 0; i < desiredNumber; i++) {
+				index = (int) (Math.random() * bufIndividuals.size());
 				newIndividuals.add(bufIndividuals.get(index));
-				bufIndividuals.remove(index);  //remove this item to avoid having doubled item in newIndividual
+				bufIndividuals.remove(index); // remove this item to avoid having doubled item in newIndividual
 			}
 			return newIndividuals;
-			
+
 		}
 		return null;
 	}
