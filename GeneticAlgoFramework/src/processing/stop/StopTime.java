@@ -1,23 +1,28 @@
 package processing.stop;
 
-import java.util.Timer;
-
 public class StopTime extends StopStrategy {
-
-	private Timer timer = new Timer();
+	
 	private int timeToReach;
+	private long initTime;
 	
 	public StopTime(int timeToReach)
 	{
-		timer.equals(0);
+		this.timeToReach = timeToReach;
+		initTime = System.currentTimeMillis() / 1000;
 	}
 	
+	/**
+	 * Stop if we reach the desired time to wait
+	 * @return boolean, if true then stop
+	 */
 	public boolean Stop()
 	{
-		if (timer.equals(timeToReach * 1000))
-			return true;
-		else
+		if (System.currentTimeMillis() / 1000 - initTime < (long) timeToReach)
+		{
 			return false;
+		}
+		else
+			return true;
 	}
 	
 }
