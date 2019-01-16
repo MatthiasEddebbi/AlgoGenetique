@@ -2,14 +2,14 @@ package main;
 
 public class IndividualTest extends Individual {
 
-	int param;
+	double param;
 	
-	public IndividualTest (int value)
+	public IndividualTest (double value)
 	{
 		param = value;
 	}
 	
-	public int GetParam()
+	public double GetParam()
 	{
 		return param;
 	}
@@ -17,24 +17,23 @@ public class IndividualTest extends Individual {
 	@Override
 	public double Evaluate() {
 		
-		score = Math.abs((double)((31 - param))) / (double)31;
-		score = score * 100;
+		score = (double)param * (double)param + 2;
 		return score;
 	}
 
 	@Override
 	public void Mutate() {
 		
-		param = param << 1 ;
+		param = param - 0.1;
 		
 	}
 
 	@Override
 	public Individual Crossing(Individual ind) {
 		
-		int parent2_value =  ((IndividualTest)ind).GetParam();
+		double parent2_value =  ((IndividualTest)ind).GetParam();
 		
-		int result = param&parent2_value;
+		double result = (param + parent2_value)/2;
 		
 		return new IndividualTest(result);
 	}
@@ -44,8 +43,6 @@ public class IndividualTest extends Individual {
 		String str ="";
 		
 		str += "La veleur en decimal est " + param + "\n";
-		
-		str += "La valeur en byte est " + Integer.toString(param,2) + "\n";
 		
 		str += "L'evaluation est de : " + score + "\n";
 		

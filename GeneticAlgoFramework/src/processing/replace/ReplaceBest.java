@@ -10,7 +10,7 @@ public class ReplaceBest extends ReplaceStrategy{
 
 	public List<Individual> Replace(List<Individual> parentList, List<Individual> childList){
 		
-		parentList.sort(Comparator.comparingDouble(Individual::getScore).reversed());
+		parentList.sort(Comparator.comparingDouble(Individual::getScore));
 		
 		for (Individual child : childList) 
 		{
@@ -20,7 +20,7 @@ public class ReplaceBest extends ReplaceStrategy{
 			if(worseParent.getScore() < child.getScore())
 			{
 				parentList.set(parentList.size()-1, child);
-				parentList.sort(Comparator.comparingDouble(Individual::getScore).reversed());
+				parentList.sort(Comparator.comparingDouble(Individual::getScore));
 			}
 		}
 		return parentList;

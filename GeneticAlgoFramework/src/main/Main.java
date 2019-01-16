@@ -2,6 +2,7 @@ package main;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import processing.replace.*;
 import processing.selection.*;
@@ -15,9 +16,11 @@ public class Main {
 		
 		List<Individual> firstGeneration = new ArrayList<Individual>();
 		
-		for(int i = 0; i < 15; i++)
+		for(int i = 0; i < 100; i++)
 		{
-			firstGeneration.add(new IndividualTest(i));
+			Random rand = new Random();
+			double pickedNumber = rand.nextDouble() *100 - 50; 
+			firstGeneration.add(new IndividualTest(pickedNumber));
 		}
 		
 		GeneticManager manager = GeneticManager.getInstance();

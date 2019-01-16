@@ -43,7 +43,7 @@ public class GeneticManager {
 		index +=1;
 		
 		}
-		while(index < 0);
+		while(index < 50);
 		
 		return currentGeneration;
 	}
