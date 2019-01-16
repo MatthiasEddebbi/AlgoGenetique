@@ -22,10 +22,11 @@ public class GenerationChild {
 		Individual individualChild;
 		List<Individual> childList = new ArrayList<Individual>();
 		
+		int length = individualList.size();
 		for (i=0; i<wantedChild; i++)
 		{
-			j = (int)(Math.random() * individualList.size());
-			k = (int)(Math.random() * individualList.size());
+			j = (int)(Math.random() * length);
+			k = (int)(Math.random() * length);
 			individualChild = individualList.get(j).Crossing(individualList.get(k));
 			threshold = (double)(Math.random() * (100 + 1));
 			if (threshold <= this.mutationRate) {
