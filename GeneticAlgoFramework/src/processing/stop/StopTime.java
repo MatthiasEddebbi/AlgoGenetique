@@ -7,14 +7,14 @@ public class StopTime extends StopStrategy {
 	private Timer timer = new Timer();
 	private int timeToReach;
 	
-	public StopTime()
+	public StopTime(int timeToReach)
 	{
 		timer.equals(0);
 	}
 	
 	public boolean Stop()
 	{
-		if (timer.equals(timeToReach))
+		if (timer.equals(timeToReach * 1000))
 			return true;
 		else
 			return false;
