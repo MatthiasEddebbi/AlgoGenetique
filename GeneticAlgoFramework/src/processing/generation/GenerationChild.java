@@ -10,12 +10,22 @@ public class GenerationChild {
 	protected double mutationRate;
 	protected int wantedChild; //cannot be more than the number of parents - 1 
 
+	/**
+	 * 
+	 * @param _mutationRate
+	 * @param _wantedChild
+	 */
 	public GenerationChild(double _mutationRate, int _wantedChild) {
 
 		mutationRate = _mutationRate;
 		wantedChild = _wantedChild;
 	}
 	
+	/**
+	 * 
+	 * @param individualList
+	 * @return List<Individual> of children implemented thanks to mutation and crossing concepts
+	 */
 	public List<Individual> GenerateChildList(List<Individual> individualList){
 		double threshold;
 		int i, j, k;
