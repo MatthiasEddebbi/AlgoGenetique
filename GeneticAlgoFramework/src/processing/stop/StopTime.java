@@ -4,20 +4,27 @@ import java.util.Timer;
 
 public class StopTime extends StopStrategy {
 
-	private Timer timer = new Timer();
+	private Thread thread = new Thread();
 	private int timeToReach;
 	
 	public StopTime(int timeToReach)
 	{
-		timer.equals(0);
+		this.timeToReach = timeToReach;
 	}
 	
 	public boolean Stop()
 	{
-		if (timer.equals(timeToReach * 1000))
-			return true;
-		else
-			return false;
+		for (int i=0 ; i < timeToReach ; i++)
+		{
+			try {
+				thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			System.out.println(i);
+		}
+		return true;
 	}
 	
 }
