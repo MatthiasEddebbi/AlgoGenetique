@@ -7,7 +7,11 @@ import java.util.List;
 import main.Individual;
 
 public class ReplaceBest extends ReplaceStrategy{
-
+	
+	public ReplaceBest() {
+		
+	}
+	
 	public List<Individual> Replace(List<Individual> parentList, List<Individual> childList){
 		
 		parentList.sort(Comparator.comparingDouble(Individual::getScore));
