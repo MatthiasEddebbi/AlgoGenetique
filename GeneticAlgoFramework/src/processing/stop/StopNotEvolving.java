@@ -21,7 +21,7 @@ public class StopNotEvolving extends StopStrategy {
 	{
 		nbIterations ++;
 		
-		if (gm.getInstance().getCurrentGeneration() == oldGeneration && nbIterations == iterations)
+		if (oldGeneration == gm.getInstance().getCurrentGeneration() && nbIterations > iterations)
 		{
 			return true;
 		}
@@ -31,5 +31,4 @@ public class StopNotEvolving extends StopStrategy {
 			return false;
 		}
 	}
-
 }

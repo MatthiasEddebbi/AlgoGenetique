@@ -10,7 +10,7 @@ public abstract class Individual {
 	public Individual() {}
 	
 	/**
-	 * Function to evaluate the individual and obtain a score
+	 * Function to evaluate the individual and obtain a score, the best solution is the one with the minimal score
 	 * @return Double to represent the "score" of the individual
 	 */
 	public abstract double Evaluate();

@@ -42,7 +42,7 @@ public class IndividualTest extends Individual {
 	{
 		String str ="";
 		
-		str += "La veleur en decimal est " + param + "\n";
+		str += "La valeur en decimal est " + param + "\n";
 		
 		str += "L'evaluation est de : " + score + "\n";
 		
