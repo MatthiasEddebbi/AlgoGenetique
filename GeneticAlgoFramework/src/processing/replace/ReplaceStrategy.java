@@ -8,9 +8,11 @@ public abstract class ReplaceStrategy {
 
 	/**
 	 * Abstract constructor for the Replace step
-	 * @param List<Individual> ind 
+	 * @param List<Individual> parentList
+	 * @param List<Individual> childList 
+	 * @return List<Individual> mix of children and parents through a random or a best strategy
 	 */
-	
+
 	public ReplaceStrategy() {
 	}
 	
