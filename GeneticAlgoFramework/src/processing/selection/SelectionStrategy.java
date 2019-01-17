@@ -6,15 +6,19 @@ import main.Individual;
 
 /**
  * Abstract class for the selection of children before next crossing/mutation iteration 
- *
+ * @author matthias
+ * @version 1.0
+ * @see SelectionStrategy
  */
 public abstract class SelectionStrategy {
+	
+	protected int numberOfChildren = 0;
 		
 	/**
 	 * Abstract constructor for Selection step
-	 * @param List<Individual> ind 
+	 * @param int numberOfChildren
 	 */
-	public SelectionStrategy() {
+	public SelectionStrategy(int numberOfChildren) {
 	}
 	
 	/**
