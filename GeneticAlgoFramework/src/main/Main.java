@@ -31,7 +31,7 @@ public class Main {
 		SelectionBest selection = new SelectionBest(50);
 		manager.getInstance().setSelection(selection);
 		
-		GenerationChild generation = new GenerationChild(mutationRate,500);
+		GenerationChild generation = new GenerationChild(mutationRate);
 		manager.getInstance().setGeneration(generation);
 		
 		ReplaceBest replace = new ReplaceBest();

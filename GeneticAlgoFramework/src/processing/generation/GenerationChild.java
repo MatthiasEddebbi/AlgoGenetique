@@ -16,17 +16,15 @@ import main.Individual;
 public class GenerationChild {
 	
 	private double 		mutationRate;
-	private int 		wantedChild; //cannot be more than the number of parents - 1 
 
 	/**
 	 * 
 	 * @param mutationRate The percentage of occurrence of a mutation (0-100)
 	 * @param wantedChild  The number of child created from the parents
 	 */
-	public GenerationChild(double mutationRate, int wantedChild) {
+	public GenerationChild(double mutationRate) {
 
 		this.mutationRate = mutationRate;
-		this.wantedChild = wantedChild;
 	}
 	
 	/**
@@ -48,9 +46,7 @@ public class GenerationChild {
 		
 		length = individualList.size();
 		
-		checkCapacityChildGeneration(length);
-		
-		for (int i=0; i<wantedChild; i++) {
+		for (int i=0; i<length-1; i++) {
 			
 			j = (int)(Math.random() * length);
 			k = (int)(Math.random() * length);
@@ -67,17 +63,5 @@ public class GenerationChild {
 		}
 		
 		return childList;
-	}
-	
-	/**
-	 * Function that will check check if the number of children desired is possible
-	 * @param numberParents Number of parent in the population
-	 */
-	private void checkCapacityChildGeneration(int numberParents) {
-		
-		if(wantedChild >= numberParents) {
-			wantedChild = numberParents - 1;
-			System.out.println("The number of wanted chilren is superior to the number of parents.\nThe numbre of children created will be equal to the number of parents minus one.");
-		}
 	}
 }

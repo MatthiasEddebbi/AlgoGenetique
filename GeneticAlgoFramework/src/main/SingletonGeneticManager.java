@@ -17,11 +17,7 @@ public class SingletonGeneticManager {
 	
 	private StopIterationManager 	stopManager;
 	
-	private List<Individual> 		oldGeneration;
-	
 	private List<Individual> 		currentGeneration;
-	
-	private double 					mutationRate;
 	
 	private static SingletonGeneticManager instance = new SingletonGeneticManager();
 	
@@ -39,13 +35,13 @@ public class SingletonGeneticManager {
 		
 		if(checkIndividualListIsCorrect() && isConfigurationDone()) {
 
+			preProcessing();
+			
 			do {
 				
 			List<Individual> parents = selection.selection(currentGeneration,10);
 			
 			List<Individual> children = generation.generateChildList(parents);
-			
-			this.oldGeneration = parents;
 			
 			this.currentGeneration = replace.replace(currentGeneration, children);
 			
@@ -60,7 +56,7 @@ public class SingletonGeneticManager {
 	}
 	
 	public void preProcessing() {
-		
+		selection.setNumberOfChildren(currentGeneration.size());
 	}
 	
 	private boolean isConfigurationDone() {
@@ -81,10 +77,7 @@ public class SingletonGeneticManager {
 	public void setCurrentGeneration(List<Individual> currentGeneration) {
 		this.currentGeneration = currentGeneration;
 	}
-
-	public void setMutationRate(double mutationRate) {
-		this.mutationRate = mutationRate;
-	}
+	
 
 	public void setReplace(ReplaceStrategy replace) {
 		this.replace = replace;

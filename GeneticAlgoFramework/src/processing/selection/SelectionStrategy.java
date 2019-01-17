@@ -27,4 +27,8 @@ public abstract class SelectionStrategy {
 	 * @return List<Individual> new list of individuals
 	 */
 	public abstract List<Individual> selection(List<Individual> listInd, int desiredNumber);
+
+	public void setNumberOfChildren(int numberOfChildren) {
+		this.numberOfChildren = numberOfChildren;
+	}
 }
