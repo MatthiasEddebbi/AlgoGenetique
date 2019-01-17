@@ -1,10 +1,8 @@
 package processing.selection;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
-import processing.geneticManager.SingletonGeneticManager;
 import processing.individual.Individual;
 
 /**
@@ -39,8 +37,8 @@ public class SelectionRandom extends SelectionStrategy {
 				ind.evaluate();
 			}
 			
-			List<Individual> newIndividuals = new ArrayList();
-			List<Individual> bufIndividuals = new ArrayList(listInd);
+			List<Individual> newIndividuals = new ArrayList<Individual>();
+			List<Individual> bufIndividuals = new ArrayList<Individual>(listInd);
 			
 			int index;
 			int length;

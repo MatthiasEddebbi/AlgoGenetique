@@ -3,8 +3,6 @@ package processing.selection;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-
-import processing.geneticManager.SingletonGeneticManager;
 import processing.individual.Individual;
 
 /**
@@ -39,7 +37,7 @@ public class SelectionBest extends SelectionStrategy {
 				ind.evaluate();
 			}
 			
-			List<Individual> newIndividuals = new ArrayList();
+			List<Individual> newIndividuals = new ArrayList<Individual>();
 
 			listInd.sort(Comparator.comparingDouble(Individual::getScore).reversed());
 			

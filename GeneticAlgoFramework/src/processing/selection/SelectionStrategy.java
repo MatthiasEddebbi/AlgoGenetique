@@ -19,6 +19,7 @@ public abstract class SelectionStrategy {
 	 * @param int numberOfChildren
 	 */
 	public SelectionStrategy(int numberOfChildren) {
+		this.numberOfChildren = numberOfChildren;
 	}
 	
 	/**
