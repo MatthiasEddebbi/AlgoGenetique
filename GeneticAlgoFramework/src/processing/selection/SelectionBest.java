@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-import main.Individual;
-import main.SingletonGeneticManager;
+import processing.geneticManager.SingletonGeneticManager;
+import processing.individual.Individual;
 
 /**
  * Concrete Selection strategy, selectionning Best children for a new mutation /
@@ -19,10 +19,7 @@ public class SelectionBest extends SelectionStrategy {
 
 	public SelectionBest(int numberOfChildren) {
 		super(numberOfChildren);
-		if(numberOfChildren > SingletonGeneticManager.getInstance().getCurrentGeneration().size()) {
-			System.out.print("number of children was to high, set to number of parent if current generation -1");
-			this.numberOfChildren = SingletonGeneticManager.getInstance().getCurrentGeneration().size() -1;
-		}	}
+	}
 
 	/**
 	 * @param List<Individual> listIng, current generation individual list

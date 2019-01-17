@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import main.Individual;
-import main.SingletonGeneticManager;
+import processing.geneticManager.SingletonGeneticManager;
+import processing.individual.Individual;
 
 /**
  * Concrete Selection strategy, selectionning Random children for a new mutation / crossing generation
@@ -18,10 +18,6 @@ public class SelectionRandom extends SelectionStrategy {
 
 	public SelectionRandom(int numberOfChildren) {
 		super(numberOfChildren);
-		if(numberOfChildren > SingletonGeneticManager.getInstance().getCurrentGeneration().size()) {
-			System.out.print("number of children was to high, set to number of parent if current generation -1");
-			this.numberOfChildren = SingletonGeneticManager.getInstance().getCurrentGeneration().size() -1;
-		}
 	}
 
 	/**

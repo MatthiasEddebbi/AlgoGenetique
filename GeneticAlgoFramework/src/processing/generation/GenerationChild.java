@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import java.util.List;
 
-import main.Individual;
+import processing.individual.Individual;
 
 /**
  * Generate children List using crossing and mutation 

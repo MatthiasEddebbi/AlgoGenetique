@@ -2,7 +2,7 @@ package processing.selection;
 
 import java.util.List;
 
-import main.Individual;
+import processing.individual.Individual;
 
 /**
  * Abstract class for the selection of children before next crossing/mutation iteration 
@@ -28,7 +28,11 @@ public abstract class SelectionStrategy {
 	 */
 	public abstract List<Individual> selection(List<Individual> listInd, int desiredNumber);
 
-	public void setNumberOfChildren(int numberOfChildren) {
-		this.numberOfChildren = numberOfChildren;
+	public void checkNumberOfChilren(int numberOfParents) {
+		if(numberOfParents < numberOfChildren) {
+			numberOfChildren = numberOfParents -1;
+			System.out.println("The number of children desired is too high considering the number of parents.\n"
+					+ "The number of children created will be : " + numberOfChildren);
+		}
 	}
 }

@@ -1,8 +1,8 @@
 package processing.stop;
 import java.util.List;
 
-import main.SingletonGeneticManager;
-import main.Individual;
+import processing.geneticManager.SingletonGeneticManager;
+import processing.individual.Individual;
 
 /**
  * @author Alexandre Durandeau

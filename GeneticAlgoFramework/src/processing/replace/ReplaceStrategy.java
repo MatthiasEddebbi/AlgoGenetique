@@ -2,7 +2,7 @@ package processing.replace;
 
 import java.util.List;
 
-import main.Individual;
+import processing.individual.Individual;
 
 /**
  * Abstract class for the Replace step

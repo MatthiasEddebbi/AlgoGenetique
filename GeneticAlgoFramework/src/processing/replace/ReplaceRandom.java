@@ -3,7 +3,7 @@ package processing.replace;
 import java.util.Comparator;
 import java.util.List;
 
-import main.Individual;
+import processing.individual.Individual;
 
 /**
  * After the creation of a List of children, this class implements a new List with random elements from both Lists parents and children and the best from the parents List.

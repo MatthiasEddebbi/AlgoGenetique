@@ -7,6 +7,8 @@ import java.util.Random;
 import processing.replace.*;
 import processing.selection.*;
 import processing.generation.*;
+import processing.geneticManager.SingletonGeneticManager;
+import processing.individual.Individual;
 import processing.stop.*;
 
 public class Main {
@@ -24,19 +26,9 @@ public class Main {
 			firstGeneration.add(new IndividualTest(pickedNumber));
 		}
 		
-		SingletonGeneticManager manager = SingletonGeneticManager.getInstance();
-		
-		manager.setCurrentGeneration(firstGeneration);
-		
 		SelectionBest selection = new SelectionBest(50);
-		manager.getInstance().setSelection(selection);
-		
 		GenerationChild generation = new GenerationChild(mutationRate);
-		manager.getInstance().setGeneration(generation);
-		
 		ReplaceBest replace = new ReplaceBest();
-		manager.getInstance().setReplace(replace);
-		
 		CriteriaTime stop = new CriteriaTime(1);
 		CriteriaIterationNumber stop1 = new CriteriaIterationNumber(5000);
 		
@@ -44,10 +36,15 @@ public class Main {
 		stopManager.addCriteria(stop);
 		stopManager.addCriteria(stop1);
 		
+		SingletonGeneticManager manager = SingletonGeneticManager.getInstance();
 		
+		manager.setCurrentGeneration(firstGeneration);
+		manager.setSelection(selection);
+		manager.setGeneration(generation);
+		manager.setReplace(replace);
 		manager.setStop(stopManager);
 		
-		List<Individual> results = manager.getInstance().processing();
+		List<Individual> results = manager.processing();
 		
 		for (int i = 0; i < 10; i++)
 		{

@@ -1,5 +1,7 @@
 package main;
 
+import processing.individual.Individual;
+
 public class IndividualTest extends Individual {
 
 	double param;

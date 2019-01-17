@@ -1,8 +1,9 @@
-package main;
+package processing.geneticManager;
 
 import java.util.List;
 
 import processing.generation.*;
+import processing.individual.Individual;
 import processing.replace.*;
 import processing.selection.*;
 import processing.stop.*;
@@ -56,7 +57,7 @@ public class SingletonGeneticManager {
 	}
 	
 	public void preProcessing() {
-		selection.setNumberOfChildren(currentGeneration.size());
+		selection.checkNumberOfChilren(currentGeneration.size());
 	}
 	
 	private boolean isConfigurationDone() {
