@@ -37,10 +37,10 @@ public class Main {
 		ReplaceBest replace = new ReplaceBest();
 		manager.getInstance().setReplace(replace);
 		
-		StopTime stop = new StopTime(1);
-		StopIterations stop1 = new StopIterations(5000);
+		CriteriaTime stop = new CriteriaTime(1);
+		CriteriaIterationNumber stop1 = new CriteriaIterationNumber(5000);
 		
-		StopManager stopManager = new StopManager();
+		StopIterationManager stopManager = new StopIterationManager();
 		stopManager.AddCriteria(stop);
 		stopManager.AddCriteria(stop1);
 		

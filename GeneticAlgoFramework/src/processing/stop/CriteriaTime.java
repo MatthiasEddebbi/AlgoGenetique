@@ -1,11 +1,11 @@
 package processing.stop;
 
-public class StopTime extends StopStrategy {
+public class CriteriaTime extends CriteriaStrategy {
 	
 	private int timeToReach;
 	private long initTime;
 	
-	public StopTime(int timeToReach)
+	public CriteriaTime(int timeToReach)
 	{
 		this.timeToReach = timeToReach;
 		initTime = System.currentTimeMillis() / 1000;

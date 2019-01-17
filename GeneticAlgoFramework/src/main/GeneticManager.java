@@ -15,7 +15,7 @@ public class GeneticManager {
 	
 	private GenerationChild generation;
 	
-	private StopManager stopManager;
+	private StopIterationManager stopManager;
 	
 	private List<Individual> oldGeneration;
 	
@@ -86,7 +86,7 @@ public class GeneticManager {
 	}
 
 
-	public void setStop(StopManager stop) {
+	public void setStop(StopIterationManager stop) {
 		this.stopManager = stop;
 	}
 	

@@ -1,6 +1,6 @@
 package processing.stop;
 
-public abstract class StopStrategy {
+public abstract class CriteriaStrategy {
 	
 	/**
 	 * Method to check if we continue the processing or we stop

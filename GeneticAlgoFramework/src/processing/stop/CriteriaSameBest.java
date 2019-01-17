@@ -3,13 +3,13 @@ package processing.stop;
 import main.GeneticManager;
 import main.Individual;
 
-public class StopBestSame extends StopStrategy{
+public class CriteriaSameBest extends CriteriaStrategy{
 	
 	private int numberIterationsSameBest;
 	private int currentIterations;
 	private Individual precedentBest;
 	
-	public StopBestSame(int numberIterationsSameBestIndividuals)
+	public CriteriaSameBest(int numberIterationsSameBestIndividuals)
 	{
 		numberIterationsSameBest = numberIterationsSameBestIndividuals;
 	}

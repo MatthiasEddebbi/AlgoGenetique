@@ -4,14 +4,14 @@ import java.util.List;
 import main.GeneticManager;
 import main.Individual;
 
-public class StopNotEvolving extends StopStrategy {
+public class CriteriaNotEvolving extends CriteriaStrategy {
 	
 	private int iterations;
 	private int nbIterations = 0;
 	private GeneticManager gm;
 	private List<Individual> oldGeneration;
 	
-	public StopNotEvolving(int iterations)
+	public CriteriaNotEvolving(int iterations)
 	{
 		oldGeneration = gm.getInstance().getCurrentGeneration();
 		this.iterations = iterations;

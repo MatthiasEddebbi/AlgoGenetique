@@ -1,11 +1,11 @@
 package processing.stop;
 
-public class StopIterations extends StopStrategy{
+public class CriteriaIterationNumber extends CriteriaStrategy{
 	
 	private int iterations;
 	private int currentIterationCount;
 	
-	public StopIterations(int iterations)
+	public CriteriaIterationNumber(int iterations)
 	{
 		this.iterations = iterations;
 		this.currentIterationCount = 0;
