@@ -1,9 +1,17 @@
 package processing.generation;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import main.Individual;
+
+/**
+ * Generate children List using crossing and mutation 
+ * @author Alex Charbonnier
+ * @version 1.0
+ * @see Individual
+ */
 
 public class GenerationChild {
 	
