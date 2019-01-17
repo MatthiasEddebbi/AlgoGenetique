@@ -12,5 +12,5 @@ public abstract class CriteriaStrategy {
 	 * Method to check if we continue the processing or we stop
 	 * @return boolean, if true then we stop
 	 */
-	public abstract boolean Stop();
+	public abstract boolean stop();
 }

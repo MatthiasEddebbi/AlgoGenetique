@@ -22,7 +22,7 @@ public class CriteriaIterationNumber extends CriteriaStrategy{
 	 * @return boolean, stop if true
 	 */
 	@Override
-	public boolean Stop() {
+	public boolean stop() {
 		
 		currentIterationCount ++;
 		

@@ -11,34 +11,29 @@ import main.Individual;
 
 public class CriteriaSameBest extends CriteriaStrategy{
 	
-	private int numberIterationsSameBest;
-	private int currentIterations;
-	private Individual precedentBest;
+	private int 		numberIterationsSameBest;
+	private int 		currentIterations;
+	private Individual 	precedentBest;
 	
 	public CriteriaSameBest(int numberIterationsSameBestIndividuals)
 	{
-		numberIterationsSameBest = numberIterationsSameBestIndividuals;
+		this.numberIterationsSameBest = numberIterationsSameBestIndividuals;
 	}
 	
-	public boolean Stop()
+	public boolean stop()
 	{
 		Individual currentBest = SingletonGeneticManager.getInstance().getCurrentGeneration().get(0);
 		
 		if(currentBest != precedentBest)
 		{
-			precedentBest = currentBest;
+			this.precedentBest = currentBest;
 			return false;
-		}
-		else
-		{
+		} else {
 			currentIterations +=1;
 			
-			if(currentIterations > numberIterationsSameBest)
-			{
+			if(currentIterations > numberIterationsSameBest) {
 				return true;
-			}
-			else
-			{
+			} else {
 				return false;
 			}
 		}	

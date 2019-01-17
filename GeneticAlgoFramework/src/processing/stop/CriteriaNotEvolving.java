@@ -3,7 +3,6 @@ import java.util.List;
 
 import main.SingletonGeneticManager;
 import main.Individual;
-import main.SingletonGeneticManager;
 
 /**
  * @author Alexandre Durandeau
@@ -13,26 +12,24 @@ import main.SingletonGeneticManager;
 
 public class CriteriaNotEvolving extends CriteriaStrategy {
 	
-	private int iterations;
-	private int nbIterations = 0;
-	private List<Individual> oldGeneration;
+	private int 				iterations;
+	private int 				nbIterations;
+	private List<Individual> 	oldGeneration;
 	
 	public CriteriaNotEvolving(int iterations)
 	{
 		oldGeneration = SingletonGeneticManager.getInstance().getCurrentGeneration();
 		this.iterations = iterations;
+		this.nbIterations = 0;
 	}
 	
-	public boolean Stop()
+	public boolean stop()
 	{
 		nbIterations ++;
 		
-		if (oldGeneration == SingletonGeneticManager.getInstance().getCurrentGeneration() && nbIterations > iterations)
-		{
+		if (oldGeneration == SingletonGeneticManager.getInstance().getCurrentGeneration() && nbIterations > iterations) {
 			return true;
-		}
-		else
-		{
+		} else {
 			oldGeneration = SingletonGeneticManager.getInstance().getCurrentGeneration();
 			return false;
 		}

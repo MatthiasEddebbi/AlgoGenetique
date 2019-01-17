@@ -12,26 +12,21 @@ public class StopIterationManager {
 
 	private List<CriteriaStrategy> listStopCriteria;
 	
-	public StopIterationManager()
-	{
+	public StopIterationManager() {
 		listStopCriteria = new ArrayList<CriteriaStrategy>();
 	}
 	
-	public void AddCriteria(CriteriaStrategy criteria)
-	{
+	public void addCriteria(CriteriaStrategy criteria) {
 		listStopCriteria.add(criteria);
 	}
 	
-	public boolean StopBasedOnCriteria()
+	public boolean stopBasedOnCriteria()
 	{
-		for(CriteriaStrategy criteria : listStopCriteria)
-		{
-			if(criteria.Stop() != true)
-			{
+		for(CriteriaStrategy criteria : listStopCriteria) {
+			if(criteria.stop() != true) {
 				return false;
 			}
 		}
-		
 		return true;
 	}
 }

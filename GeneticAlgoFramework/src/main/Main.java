@@ -41,8 +41,8 @@ public class Main {
 		CriteriaIterationNumber stop1 = new CriteriaIterationNumber(5000);
 		
 		StopIterationManager stopManager = new StopIterationManager();
-		stopManager.AddCriteria(stop);
-		stopManager.AddCriteria(stop1);
+		stopManager.addCriteria(stop);
+		stopManager.addCriteria(stop1);
 		
 		
 		manager.setStop(stopManager);

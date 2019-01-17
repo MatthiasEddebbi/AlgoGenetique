@@ -47,7 +47,7 @@ public class SingletonGeneticManager {
 		
 		index ++;
 		
-		} while(stopManager.StopBasedOnCriteria() != true);
+		} while(stopManager.stopBasedOnCriteria() != true);
 		
 		System.out.println(index);
 		
