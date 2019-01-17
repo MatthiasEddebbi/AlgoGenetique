@@ -18,24 +18,26 @@ public class SelectionBestIndividuals extends SelectionStrategy {
 	 * @return List<Individual> newIndividual
 	 */
 	@Override
-	public List<Individual> Selection(List<Individual> listInd, int desiredNumber) {
+	public List<Individual> selection(List<Individual> listInd, int desiredNumber) {
 
 		// Evaluate fonction of each individuals before selection
-		for (Individual ind : listInd) {
-			ind.evaluate();
-		}
+		
 		if (listInd == null) {
 			System.out.print("No Individuals defined in Selection step");
 		} else {
 
+			for (Individual ind : listInd) {
+				ind.evaluate();
+			}
+			
 			List<Individual> newIndividuals = new ArrayList();
 
 			listInd.sort(Comparator.comparingDouble(Individual::getScore).reversed());
+			
 			newIndividuals = listInd.subList(0, desiredNumber); // Copy best individual from current generation minus
 																// one parent
 			return newIndividuals;
 		}
 		return null;
 	}
-
 }

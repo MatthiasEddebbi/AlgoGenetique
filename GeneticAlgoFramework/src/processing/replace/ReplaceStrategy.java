@@ -22,5 +22,5 @@ public abstract class ReplaceStrategy {
 	public ReplaceStrategy() {
 	}
 	
-	public abstract List<Individual> Replace(List<Individual> parentList, List<Individual> childList);
+	public abstract List<Individual> replace(List<Individual> parentList, List<Individual> childList);
 }

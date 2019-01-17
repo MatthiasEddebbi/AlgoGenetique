@@ -14,14 +14,18 @@ import main.Individual;
 
 public class ReplaceRandom extends ReplaceStrategy{
 
-	public List<Individual> Replace(List<Individual> parentList, List<Individual> childList){
+	public List<Individual> replace(List<Individual> parentList, List<Individual> childList) {
 		
-		int i, rand;
+		int rand;
+		int length;
+		int i;
 
+		length = parentList.size();
+		
 		for (i=0; i<childList.size(); i++) {
 			
 			parentList.sort(Comparator.comparingDouble(Individual::getScore).reversed());
-			rand = 1 + (int)(Math.random() * parentList.size());
+			rand = 1 + (int)(Math.random() * length);
 			parentList.add(rand, childList.get(i));
 		}
 		

@@ -22,7 +22,5 @@ public abstract class SelectionStrategy {
 	 * @param listInd, list of current generation individuals
 	 * @return List<Individual> new list of individuals
 	 */
-	public abstract List<Individual> Selection(List<Individual> listInd, int desiredNumber);
-		
-
+	public abstract List<Individual> selection(List<Individual> listInd, int desiredNumber);
 }

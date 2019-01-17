@@ -37,13 +37,13 @@ public class SingletonGeneticManager {
 		int index = 0;
 		do {
 			
-		List<Individual> parents = selection.Selection(currentGeneration,10);
+		List<Individual> parents = selection.selection(currentGeneration,10);
 		
 		List<Individual> children = generation.generateChildList(parents);
 		
 		this.oldGeneration = parents;
 		
-		this.currentGeneration = replace.Replace(currentGeneration, children);
+		this.currentGeneration = replace.replace(currentGeneration, children);
 		
 		index ++;
 		

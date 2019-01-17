@@ -12,8 +12,8 @@ public class GenerationChild {
 
 	/**
 	 * 
-	 * @param mutationRate
-	 * @param wantedChild
+	 * @param mutationRate The percentage of occurrence of a mutation (0-100)
+	 * @param wantedChild  The number of child created from the parents
 	 */
 	public GenerationChild(double mutationRate, int wantedChild) {
 
@@ -23,7 +23,7 @@ public class GenerationChild {
 	
 	/**
 	 * 
-	 * @param individualList
+	 * @param individualList List of Individuals corresponding to the parents
 	 * @return List<Individual> of children implemented thanks to mutation and crossing concepts
 	 */
 	public List<Individual> generateChildList(List<Individual> individualList) {
