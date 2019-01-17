@@ -6,6 +6,12 @@ import java.util.List;
 
 import main.Individual;
 
+/**
+ * After the creation of a List of children, this class implements a new List with the top score elements from both Lists parents and children.
+ * @author Alex Charbonnier
+ * @version 1.0
+ * @see Individual, ReplaceStrategy
+ */
 public class ReplaceBest extends ReplaceStrategy{
 	
 	public ReplaceBest() {

@@ -4,6 +4,12 @@ import java.util.List;
 
 import main.Individual;
 
+/**
+ * Abstract class for the Replace step
+ * @author Alex Charbonnier
+ * @version 1.0
+ * @see ReplaceBest, ReplaceRandom
+ */
 public abstract class ReplaceStrategy {
 
 	/**

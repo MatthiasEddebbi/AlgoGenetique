@@ -5,6 +5,13 @@ import java.util.List;
 
 import main.Individual;
 
+/**
+ * After the creation of a List of children, this class implements a new List with random elements from both Lists parents and children and the best from the parents List.
+ * @author Alex Charbonnier
+ * @version 1.0
+ * @see Individual, ReplaceStrategy
+ */
+
 public class ReplaceRandom extends ReplaceStrategy{
 
 	public List<Individual> Replace(List<Individual> parentList, List<Individual> childList){
