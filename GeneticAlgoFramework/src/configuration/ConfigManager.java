@@ -1,9 +1,13 @@
 package configuration;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
+/**
+ * Class to use before GeneticManager for setting properly settings before processing
+ * @author matthias
+ * @version 0.1
+ * @throws Exception
+ */
 public class ConfigManager {
 
 	
@@ -17,12 +21,7 @@ public class ConfigManager {
 	public static final String STOP_ITERATIONS = "stop.interations";
 	public static final String STOP_NOT_EVOLVING = "stop.notEvolving";
 	public static final String STOP_BEST_SINCE_X_ITERATION = "stop.interations";
-	
-	
-	private Long stopTimeout;
-	private Long stopIterarions;
-	private Long stopNotEvolving;
-	private Long stopBestIteration;
+
 	
 	private String choosenReplace;
 	private String choosenSelection;
@@ -32,8 +31,10 @@ public class ConfigManager {
 	private boolean isSelectionConfigured = false;
 	private boolean isStopConditionConfigured = false;
 	
-	public ConfigManager() {
-		choosenStopCondition = new HashMap<String, Long>();
+	public ConfigManager() throws Exception {
+		//choosenStopCondition = new HashMap<String, Long>();
+		throw new Exception("Class not implemented yet");
+		
 	}
 
 	public void setReplaceStrategy(String replaceMethod) throws Exception {
