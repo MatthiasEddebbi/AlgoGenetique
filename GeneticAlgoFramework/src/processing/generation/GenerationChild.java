@@ -7,15 +7,16 @@ import java.util.List;
 import processing.individual.Individual;
 
 /**
- * Generate children List using crossing and mutation 
+ * Generate children List using crossing and mutation
+ * 
  * @author Alex Charbonnier
  * @version 1.0
  * @see Individual
  */
 
 public class GenerationChild {
-	
-	private double 		mutationRate;
+
+	private double mutationRate;
 
 	/**
 	 * 
@@ -26,42 +27,43 @@ public class GenerationChild {
 
 		this.mutationRate = mutationRate;
 	}
-	
+
 	/**
 	 * 
 	 * @param individualList List of Individuals corresponding to the parents
-	 * @return List<Individual> of children implemented thanks to mutation and crossing concepts
+	 * @return List<Individual> of children implemented thanks to mutation and
+	 *         crossing concepts
 	 */
 	public List<Individual> generateChildList(List<Individual> individualList) {
-		
-		double 		threshold;
-		
-		int 		j;
-		int 		k;
-		int 		length;
-		
-		Individual 	individualChild;
-		
+
+		double threshold;
+
+		int j;
+		int k;
+		int length;
+
+		Individual individualChild;
+
 		List<Individual> childList = new ArrayList<Individual>();
-		
+
 		length = individualList.size();
-		
-		for (int i=0; i<length-1; i++) {
-			
-			j = (int)(Math.random() * length);
-			k = (int)(Math.random() * length);
-			
+
+		for (int i = 0; i < length - 1; i++) {
+
+			j = (int) (Math.random() * length);
+			k = (int) (Math.random() * length);
+
 			individualChild = individualList.get(j).crossing(individualList.get(k));
-			
-			threshold = (double)(Math.random() * (100 + 1));
-			
+
+			threshold = (double) (Math.random() * (100 + 1));
+
 			if (threshold <= mutationRate) {
 				individualChild.mutate();
 			}
-			
+
 			childList.add(individualChild);
 		}
-		
+
 		return childList;
 	}
 }

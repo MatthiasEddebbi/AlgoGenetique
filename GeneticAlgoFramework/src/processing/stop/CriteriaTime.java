@@ -6,27 +6,26 @@ package processing.stop;
  * @see CriteriaStrategy
  */
 public class CriteriaTime extends CriteriaStrategy {
-	
-	private int 	timeToReach;
-	private long 	initTime;
-	
-	public CriteriaTime(int timeToReach)
-	{
+
+	private int timeToReach;
+	private long initTime;
+
+	public CriteriaTime(int timeToReach) {
 		this.timeToReach = timeToReach;
 		this.initTime = System.currentTimeMillis() / 1000;
 	}
-	
+
 	/**
 	 * Stop if we reach the desired time to wait
+	 * 
 	 * @return boolean, if true then stop
 	 */
-	public boolean stop()
-	{
+	public boolean stop() {
 		if (System.currentTimeMillis() / 1000 - initTime < (long) timeToReach) {
 			return false;
-		}else {
+		} else {
 			return true;
 		}
 	}
-	
+
 }

@@ -11,19 +11,18 @@ import java.util.List;
 public class StopIterationManager {
 
 	private List<CriteriaStrategy> listStopCriteria;
-	
+
 	public StopIterationManager() {
 		listStopCriteria = new ArrayList<CriteriaStrategy>();
 	}
-	
+
 	public void addCriteria(CriteriaStrategy criteria) {
 		listStopCriteria.add(criteria);
 	}
-	
-	public boolean stopBasedOnCriteria()
-	{
-		for(CriteriaStrategy criteria : listStopCriteria) {
-			if(criteria.stop() != true) {
+
+	public boolean stopBasedOnCriteria() {
+		for (CriteriaStrategy criteria : listStopCriteria) {
+			if (criteria.stop() != true) {
 				return false;
 			}
 		}
