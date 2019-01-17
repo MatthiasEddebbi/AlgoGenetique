@@ -7,25 +7,25 @@ import processing.replace.*;
 import processing.selection.*;
 import processing.stop.*;
 
-public class GeneticManager {
+public class SingletonGeneticManager {
 	
-	private ReplaceStrategy replace;
+	private ReplaceStrategy 		replace;
 	
-	private SelectionStrategy selection;
+	private SelectionStrategy 		selection;
 	
-	private GenerationChild generation;
+	private GenerationChild 		generation;
 	
-	private StopIterationManager stopManager;
+	private StopIterationManager 	stopManager;
 	
-	private List<Individual> oldGeneration;
+	private List<Individual> 		oldGeneration;
 	
-	private List<Individual> currentGeneration;
+	private List<Individual> 		currentGeneration;
 	
-	private double mutationRate;
+	private double 					mutationRate;
 	
-	private static GeneticManager instance = new GeneticManager();
+	private static SingletonGeneticManager instance = new SingletonGeneticManager();
 	
-	private GeneticManager() {
+	private SingletonGeneticManager() {
 		
 	}
 	
@@ -33,22 +33,21 @@ public class GeneticManager {
 	 * Method that will evaluate, cross and mutate the individuals to obtain "better" individuals
 	 * @return List of individuals with parameters closer to a minimal
 	 */
-	public List<Individual> Processing() {
+	public List<Individual> processing() {
 		int index = 0;
 		do {
 			
-		List<Individual> parents = this.selection.Selection(currentGeneration,10);
+		List<Individual> parents = selection.Selection(currentGeneration,10);
 		
-		List<Individual> children = this.generation.GenerateChildList(parents);
+		List<Individual> children = generation.generateChildList(parents);
 		
 		this.oldGeneration = parents;
 		
-		currentGeneration = this.replace.Replace(currentGeneration, children);
+		this.currentGeneration = replace.Replace(currentGeneration, children);
 		
 		index ++;
 		
-		}
-		while(stopManager.StopBasedOnCriteria() != true);
+		} while(stopManager.StopBasedOnCriteria() != true);
 		
 		System.out.println(index);
 		
@@ -57,7 +56,7 @@ public class GeneticManager {
 	
 	// Getters and Setters
 	
-	public static GeneticManager getInstance() {
+	public static SingletonGeneticManager getInstance() {
 		return instance;
 	}
 

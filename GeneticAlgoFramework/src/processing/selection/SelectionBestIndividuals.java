@@ -22,7 +22,7 @@ public class SelectionBestIndividuals extends SelectionStrategy {
 
 		// Evaluate fonction of each individuals before selection
 		for (Individual ind : listInd) {
-			ind.Evaluate();
+			ind.evaluate();
 		}
 		if (listInd == null) {
 			System.out.print("No Individuals defined in Selection step");

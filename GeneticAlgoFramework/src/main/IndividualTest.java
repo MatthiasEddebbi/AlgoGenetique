@@ -15,21 +15,21 @@ public class IndividualTest extends Individual {
 	}
 	
 	@Override
-	public double Evaluate() {
+	public double evaluate() {
 		
 		score = (double)param * (double)param + 2;
 		return score;
 	}
 
 	@Override
-	public void Mutate() {
+	public void mutate() {
 		
 		param = param - 0.1;
 		
 	}
 
 	@Override
-	public Individual Crossing(Individual ind) {
+	public Individual crossing(Individual ind) {
 		
 		double parent2_value =  ((IndividualTest)ind).GetParam();
 		

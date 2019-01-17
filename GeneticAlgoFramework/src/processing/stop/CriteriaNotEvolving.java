@@ -1,8 +1,9 @@
 package processing.stop;
 import java.util.List;
 
-import main.GeneticManager;
+import main.SingletonGeneticManager;
 import main.Individual;
+import main.SingletonGeneticManager;
 
 /**
  * @author Alexandre Durandeau
@@ -14,12 +15,11 @@ public class CriteriaNotEvolving extends CriteriaStrategy {
 	
 	private int iterations;
 	private int nbIterations = 0;
-	private GeneticManager gm;
 	private List<Individual> oldGeneration;
 	
 	public CriteriaNotEvolving(int iterations)
 	{
-		oldGeneration = gm.getInstance().getCurrentGeneration();
+		oldGeneration = SingletonGeneticManager.getInstance().getCurrentGeneration();
 		this.iterations = iterations;
 	}
 	
@@ -27,13 +27,13 @@ public class CriteriaNotEvolving extends CriteriaStrategy {
 	{
 		nbIterations ++;
 		
-		if (oldGeneration == gm.getInstance().getCurrentGeneration() && nbIterations > iterations)
+		if (oldGeneration == SingletonGeneticManager.getInstance().getCurrentGeneration() && nbIterations > iterations)
 		{
 			return true;
 		}
 		else
 		{
-			oldGeneration = gm.getInstance().getCurrentGeneration();
+			oldGeneration = SingletonGeneticManager.getInstance().getCurrentGeneration();
 			return false;
 		}
 	}

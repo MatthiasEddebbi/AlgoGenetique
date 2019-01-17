@@ -22,7 +22,7 @@ public class SelectionRandom extends SelectionStrategy {
 
 		// Evaluate fonction of each individuals before selection
 		for (Individual ind : listInd) {
-			ind.Evaluate();
+			ind.evaluate();
 		}
 
 		// listInd must be given

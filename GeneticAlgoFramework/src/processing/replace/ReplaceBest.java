@@ -24,7 +24,7 @@ public class ReplaceBest extends ReplaceStrategy{
 		
 		for (Individual child : childList) 
 		{
-			child.Evaluate();
+			child.evaluate();
 			Individual worseParent = parentList.get(parentList.size()-1);
 			
 			if(worseParent.getScore() < child.getScore())

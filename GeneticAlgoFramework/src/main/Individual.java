@@ -13,19 +13,19 @@ public abstract class Individual {
 	 * Function to evaluate the individual and obtain a score, the best solution is the one with the minimal score
 	 * @return Double to represent the "score" of the individual
 	 */
-	public abstract double Evaluate();
+	public abstract double evaluate();
 	
 	/**
 	 * Function to mutate the individual
 	 */
-	public abstract  void Mutate();
+	public abstract  void mutate();
 	
 	/**
 	 * Function to create a new individual from two individuals
 	 * @param ind Second individual for the merging
 	 * @return New individual obtain from two parents
 	 */
-	public abstract Individual Crossing(Individual ind);
+	public abstract Individual crossing(Individual ind);
 
 	public double getScore() {
 		return score;

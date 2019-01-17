@@ -1,6 +1,6 @@
 package processing.stop;
 
-import main.GeneticManager;
+import main.SingletonGeneticManager;
 import main.Individual;
 
 /**
@@ -22,7 +22,7 @@ public class CriteriaSameBest extends CriteriaStrategy{
 	
 	public boolean Stop()
 	{
-		Individual currentBest = GeneticManager.getInstance().getCurrentGeneration().get(0);
+		Individual currentBest = SingletonGeneticManager.getInstance().getCurrentGeneration().get(0);
 		
 		if(currentBest != precedentBest)
 		{

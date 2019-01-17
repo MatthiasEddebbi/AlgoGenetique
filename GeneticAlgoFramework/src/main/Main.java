@@ -17,14 +17,14 @@ public class Main {
 		
 		List<Individual> firstGeneration = new ArrayList<Individual>();
 		
-		for(int i = 0; i < 100000; i++)
+		for(int i = 0; i < 100; i++)
 		{
 			Random rand = new Random();
 			double pickedNumber = rand.nextDouble() *10000 - 5000;
 			firstGeneration.add(new IndividualTest(pickedNumber));
 		}
 		
-		GeneticManager manager = GeneticManager.getInstance();
+		SingletonGeneticManager manager = SingletonGeneticManager.getInstance();
 		
 		manager.setCurrentGeneration(firstGeneration);
 		
@@ -47,7 +47,7 @@ public class Main {
 		
 		manager.setStop(stopManager);
 		
-		List<Individual> results = manager.getInstance().Processing();
+		List<Individual> results = manager.getInstance().processing();
 		
 		for (int i = 0; i < 10; i++)
 		{
