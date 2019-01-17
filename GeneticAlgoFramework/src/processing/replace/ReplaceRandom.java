@@ -14,6 +14,7 @@ import main.Individual;
 
 public class ReplaceRandom extends ReplaceStrategy{
 
+	@Override
 	public List<Individual> replace(List<Individual> parentList, List<Individual> childList) {
 		
 		int rand;
