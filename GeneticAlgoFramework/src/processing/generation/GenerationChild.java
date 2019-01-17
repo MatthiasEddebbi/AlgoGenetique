@@ -7,8 +7,8 @@ import main.Individual;
 
 public class GenerationChild {
 	
-	protected double 	mutationRate;
-	protected int 		wantedChild; //cannot be more than the number of parents - 1 
+	private double 		mutationRate;
+	private int 		wantedChild; //cannot be more than the number of parents - 1 
 
 	/**
 	 * 
