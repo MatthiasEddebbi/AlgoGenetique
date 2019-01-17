@@ -17,6 +17,12 @@ public class ReplaceBest extends ReplaceStrategy{
 		
 	}
 	
+	/**
+	 * replace implementation giving only best children of current iteration
+	 * @param List<Individual> parentList
+	 * @param List<Individual> childList
+	 * @return List<Individual> new list of individuals sorted by best score
+	 */
 	@Override
 	public List<Individual> replace(List<Individual> parentList, List<Individual> childList) {
 		

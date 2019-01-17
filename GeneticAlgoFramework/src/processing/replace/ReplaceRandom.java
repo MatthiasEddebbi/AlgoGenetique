@@ -14,6 +14,12 @@ import processing.individual.Individual;
 
 public class ReplaceRandom extends ReplaceStrategy{
 
+	/**
+	 * replace implementation giving random children of current iteration
+	 * @param List<Individual> parentList
+	 * @param List<Individual> childList
+	 * @return List<Individual> new list of individuals
+	 */
 	@Override
 	public List<Individual> replace(List<Individual> parentList, List<Individual> childList) {
 		

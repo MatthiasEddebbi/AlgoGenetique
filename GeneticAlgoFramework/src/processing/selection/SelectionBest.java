@@ -22,6 +22,7 @@ public class SelectionBest extends SelectionStrategy {
 	}
 
 	/**
+	 * Implementation of selection method giving the best individual for next generation
 	 * @param List<Individual> listIng, current generation individual list
 	 * @return List<Individual> newIndividual
 	 */
