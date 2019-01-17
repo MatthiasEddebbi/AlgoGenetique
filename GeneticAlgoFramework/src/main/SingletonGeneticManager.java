@@ -34,24 +34,33 @@ public class SingletonGeneticManager {
 	 * @return List of individuals with parameters closer to a minimal
 	 */
 	public List<Individual> processing() {
+		
 		int index = 0;
-		do {
+		
+		if(checkIndividualListIsCorrect()) {
+
+			do {
+				
+			List<Individual> parents = selection.selection(currentGeneration,10);
 			
-		List<Individual> parents = selection.selection(currentGeneration,10);
-		
-		List<Individual> children = generation.generateChildList(parents);
-		
-		this.oldGeneration = parents;
-		
-		this.currentGeneration = replace.replace(currentGeneration, children);
-		
-		index ++;
-		
-		} while(stopManager.stopBasedOnCriteria() != true);
-		
-		System.out.println(index);
+			List<Individual> children = generation.generateChildList(parents);
+			
+			this.oldGeneration = parents;
+			
+			this.currentGeneration = replace.replace(currentGeneration, children);
+			
+			index ++;
+			
+			} while(stopManager.stopBasedOnCriteria() != true);
+			
+			System.out.println(index);
+		} 
 		
 		return currentGeneration;
+	}
+	
+	public void preProcessing() {
+		
 	}
 	
 	// Getters and Setters
@@ -84,9 +93,17 @@ public class SingletonGeneticManager {
 		this.generation = generation;
 	}
 
-
 	public void setStop(StopIterationManager stop) {
 		this.stopManager = stop;
 	}
 	
+	private boolean checkIndividualListIsCorrect() {
+		
+		if(currentGeneration == null || currentGeneration.size() < 2) {
+			System.out.println("The population is inexistant or the number of inidividuals is not enough.");
+			return false;
+		} else {
+			return true;
+		}
+	}
 }
