@@ -37,7 +37,7 @@ public class SingletonGeneticManager {
 		
 		int index = 0;
 		
-		if(checkIndividualListIsCorrect()) {
+		if(checkIndividualListIsCorrect() && isConfigurationDone()) {
 
 			do {
 				
@@ -62,6 +62,11 @@ public class SingletonGeneticManager {
 	public void preProcessing() {
 		
 	}
+	
+	private boolean isConfigurationDone() {
+		return selection != null && replace != null && generation != null && stopManager != null;
+	}
+
 	
 	// Getters and Setters
 	
