@@ -28,7 +28,7 @@ public class Main {
 		
 		manager.setCurrentGeneration(firstGeneration);
 		
-		SelectionBestIndividuals selection = new SelectionBestIndividuals();
+		SelectionBest selection = new SelectionBest(50);
 		manager.getInstance().setSelection(selection);
 		
 		GenerationChild generation = new GenerationChild(mutationRate,500);
