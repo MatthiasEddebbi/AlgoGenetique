@@ -3,6 +3,12 @@ package processing.stop;
 import main.GeneticManager;
 import main.Individual;
 
+/**
+ * @author Alexandre Durandeau
+ * @version 1.0
+ * @see CriteriaStrategy
+ */
+
 public class CriteriaSameBest extends CriteriaStrategy{
 	
 	private int numberIterationsSameBest;

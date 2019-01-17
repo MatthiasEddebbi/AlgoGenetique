@@ -4,6 +4,12 @@ import java.util.List;
 import main.GeneticManager;
 import main.Individual;
 
+/**
+ * @author Alexandre Durandeau
+ * @version 1.0
+ * @see CriteriaStrategy
+ */
+
 public class CriteriaNotEvolving extends CriteriaStrategy {
 	
 	private int iterations;

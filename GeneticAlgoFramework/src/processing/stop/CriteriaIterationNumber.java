@@ -1,5 +1,11 @@
 package processing.stop;
 
+/**
+ * @author Alexandre Durandeau
+ * @version 1.0
+ * @see CriteriaStrategy
+ */
+
 public class CriteriaIterationNumber extends CriteriaStrategy{
 	
 	private int iterations;

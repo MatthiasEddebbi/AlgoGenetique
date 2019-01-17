@@ -1,5 +1,11 @@
 package processing.stop;
 
+/**
+ * Abstract class which implements the stopping method for a population
+ * @author Alexandre Durandeau
+ * @version 1.0
+ * @see CriteriaIterationNumber, CriteriaNotEvolving, CriteriaSameBest, CriteriaTime
+ */
 public abstract class CriteriaStrategy {
 	
 	/**
